@@ -1,0 +1,11 @@
+<h2 class="title">Searching: <small>{{ term }}</small></h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <app-heroe-card [heroe]="heroe" [index]="heroe.idx!" *ngFor="let heroe of heroes;"></app-heroe-card>
+</div>
+
+<div class="col-12 mt-5 animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="alert alert-danger" role="alert">
+    No records found!
+  </div>
+</div>

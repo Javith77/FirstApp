@@ -1,0 +1,6 @@
+<h2 class="title">Heroes</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <app-heroe-card [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index">
+  </app-heroe-card>
+</div>
