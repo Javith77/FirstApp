@@ -1,0 +1,163 @@
+<h2 class="title animated fadeIn">Pipes...<small class="text-muted"> </small></h2>
+
+<table class="table table-sm table-hover table-dark animated fadeIn fast">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Variable</th>
+      <th scope="col">Pipe</th>
+      <th scope="col">Variable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ name }}</td>
+      <td>uppercase</td>
+      <td>{{ name | uppercase }}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>{{ name }}</td>
+      <td>lowercase</td>
+      <td>{{ name | lowercase }}</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>{{ name2 }}</td>
+      <td>capitalize</td>
+      <td>{{ name2 | capitalize}}</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>{{ name }}</td>
+      <td>slice:3</td>
+      <td>{{ name | slice:3 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>{{ name }}</td>
+      <td>slice:0:3</td>
+      <td>{{ name | slice:0:3 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>{{ PI }}</td>
+      <td>number:'3.0-0'</td>
+      <td>{{ PI | number:'3.0-0' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>{{ PI }}</td>
+      <td>number:'.0-2' </td>
+      <td>{{ PI | number:'.0-2' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>{{ percentage }}</td>
+      <td>percent</td>
+      <td>{{ percentage | percent }}</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>{{ percentage }}</td>
+      <td>percent:'2.2-2'</td>
+      <td>{{ percentage | percent:'2.2-2' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>{{ percentage }}</td>
+      <td>percent:'2.2-2'</td>
+      <td>{{ percentage | percent:'2.2-2' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>{{ salary }}</td>
+      <td>currency</td>
+      <td>{{ salary | currency }}</td>
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>{{ salary }}</td>
+      <td>currency:'COP':'symbol-narrow':'.0-0'</td>
+      <td>{{ salary | currency:'COP':'symbol-narrow':'.0-0' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>{{ promiseValue }}</td>
+      <td>async</td>
+      <td>{{ promiseValue | async }}</td>
+    </tr>
+    <tr>
+      <th scope="row">13</th>
+      <td>{{ date }}</td>
+      <td>date:'short'</td>
+      <td>{{ date | date:'short' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">14</th>
+      <td>{{ date }}</td>
+      <td>date:'MMMM - dd'</td>
+      <td>{{ date | date:'MMMM - dd' }}</td>
+    </tr>
+    <tr>
+      <th scope="row">15</th>
+      <td>{{ date }}</td>
+      <td>
+        date:'MMMM - dd':'':'{{ locale }}'
+        <br>
+        <button class="btn btn-primary m-1" (click)="locale = 'en'">English</button>
+        <button class="btn btn-success m-1" (click)="locale = 'fr'">Frances</button>
+        <button class="btn btn-secondary m-1" (click)="locale = 'es'">Spanish</button>
+      </td>
+      <td>{{ date | date:'MMMM - dd':'': locale }}</td>
+    </tr>
+    <tr>
+      <th scope="row">16</th>
+      <td>{{ name3 }}</td>
+      <td>
+        password: {{ isPassword }}
+        <button class="btn btn-primary m-2" (click)="isPassword = !isPassword">{{ isPassword ? 'Inactive':'Active'}}</button>
+      </td>
+      <td>{{ name3 | password:isPassword }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 class="title animated fadeIn">Pipe Slice...<small class="text-muted"> </small></h2>
+
+<ul class="list-group animated fadeIn fast">
+  <li class="list-group-item text-white bg-dark" *ngFor="let item of heroes | slice:2:20">{{ item.nombre }}</li>
+</ul>
+
+<hr>
+
+<h2 class="title animated fadeIn">Pipe Json...<small class="text-muted"></small></h2>
+
+<div class="card text-white bg-dark  mb-3 animated fadeIn fast">
+  <div class="card-header">JSON Heroes</div>
+  <div class="card-body">
+    <h5 class="card-title">heroes | json</h5>
+    <pre class="card-text" style="max-height: 300px;">{{ heroes | json}}
+    </pre>
+  </div>
+</div>
+
+<hr>
+
+<h2 class="title animated fadeIn">Pipe Json...<small class="text-muted"></small></h2>
+
+<div class="card text-white bg-dark mb-3 fadeIn fast">
+  <div class="card-header">JSON Heroes</div>
+  <div class="card-body">
+    <h5 class="card-title">...</h5>
+    <p class="card-text text-center">
+      <iframe width="560" height="315" [src]="videoUrl | domsecurity" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </p>
+  </div>
+</div>
